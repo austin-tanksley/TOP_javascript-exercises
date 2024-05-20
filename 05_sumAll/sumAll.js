@@ -1,26 +1,22 @@
-const sumAll = function(in1, in2) {
+const sumAll = function(...args) {
     sum = 0;
     let floor = 0;
     let ceiling = 0;
+    let nums = args;
+    nums.sort();
+    //error handling
+    for (const num of nums){
+        if (num<0){
+            return "ERROR";
+        }
+        else if (typeof num != "number"){
+            return "ERROR";
+        }
+    }
 
-    //returns error if inputs are negative
-    if (in1<0 || in2<0){
-        return 'ERROR'
-    }
-    else if (isNaN(in1)){
-        return 'ERROR';
-    }
-    else if (isNaN(in2)){
-        return 'ERROR';
-    }
-    if (in1>in2){
-        floor = in2;
-        ceiling = in1;
-    }
-    else {
-        floor = in1;
-        ceiling = in2;
-    }
+    //assign to floor and ceiling
+    floor = nums[0];
+    ceiling = nums[1];
     for (i = floor; i < (ceiling +1); i++) {
         sum += i;
     }
