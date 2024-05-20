@@ -4,7 +4,7 @@ const sumAll = function(...args) {
     let ceiling = 0;
     let nums = args;
     nums.sort();
-    
+
     //error handling
     for (const num of nums){
         if (num<0){
