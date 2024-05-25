@@ -7,7 +7,7 @@ const palindromes = function (inStr) {
         .join("");
     const reversed = stripped.split('').reverse().join('');
 
-    return (reversed === stripped) ? true : false;
+    return reversed === stripped;
 };
 
 // Do not edit below this line
